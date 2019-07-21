@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.invisionapp.Studio.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+    <name>Invision Studio</name>
+    <summary>The world's most powerful screen design tool</summary>
+    <description><p>Invision Studio is a new platform inspired by the world’s best design teams. Design, prototype, and animate—all in one place.</p></description>
+
+    <screenshots>
+        <screenshot type="default">
+            <image width="2472" height="1354">https://s3.amazonaws.com/www-assets.invisionapp.com/uploads/2018/01/bg-footer.png</image>
+        </screenshot>
+    </screenshots>
+
+    <developer_name>Invision Inc.</developer_name>
+
+    <url type="homepage">https://invisionapp.com/studio</url>
+    <url type="help">https://github.com/sr229/com.invisionapp.Studio/issues</url>
+    <url type="faq">https://invisionapp.com/studio</url>
+    <url type="bugtracker">https://github.com/sr229/com.invisionapp.Studio/issues</url>
+
+    <categories>
+        <category>Game</category>
+        <category>RolePlaying</category>
+    </categories>
+
+    <releases>
+        <release date="2019-07-21" version="1.20.0">
+            <description>
+                <ul>
+                    <li>Initial Experimental Release</li>
+                </ul>
+            </description>
+        </release>>
+</component>
