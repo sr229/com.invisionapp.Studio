@@ -23,47 +23,6 @@ echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##"
 echo "########################################################"
 echo
 
-# Set video memory by checking xorg
-set_video_memory(){
-  if [[ ! -z "${VIDEO_MEMORY}" ]]; then
-    echo "Using explicitly set VMEM of ${VIDEO_MEMORY}"
-  elif  [ -f "${XORG_LOG}" ]; then
-
-    # Get Video Memory from Xorg logs
-    local xorg_vmem
-    xorg_vmem="$(sed -rn 's/.*memory: ([0-9]*).*kbytes/\1/gpI' ${XORG_LOG})"
-
-    if [[ ! -z "${xorg_vmem}" ]]; then
-        VIDEO_MEMORY=$((${xorg_vmem} / 1024))
-        echo "Setting video memory to ${VIDEO_MEMORY}"
-    else
-      echo "Unable to find video memory in ${XORG_LOG}."
-      echo "Leaving video card memory at default settings."
-      echo "To set value explicitly, set the VIDEO_MEMORY environment variable"
-      return 1
-    fi
-
-  else
-    echo "Unable to read Xorg logs from ${XORG_LOG}."
-    echo "Leaving video card memory at default settings."
-    return 1
-  fi
-
-      tmpfile=$(mktemp VideoMemory.XXXXX.reg)
-
-      cat <<EOF > "${tmpfile}"
-Windows Registry Editor Version 5.00
-
-[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]
-"VideoMemorySize"="${VIDEO_MEMORY}"
-
-EOF
-
-  "${WINE}" regedit "${tmpfile}" >/dev/null 2>&1
-  rm "${tmpfile}"
-  return 0
-}
-
 set_wine_settings(){
   local my_documents="${WINEPREFIX}/drive_c/users/${USER}/My Documents"
 
@@ -115,8 +74,6 @@ is_updated(){
 
 # Main function
 startup(){
-
-  set_video_memory
 
   if [ ! -d "${WINEPREFIX}/drive_c/users/${USER}/AppData/Local/Invision Studio" ]; then
      echo "Ruh roh! Invision Studio is not installed."
