@@ -180,14 +180,14 @@
             "name": "icons",
             "buildsystem": "simple",
             "build-commands": [
-                "install -D --mode=644 invision-studio.svg /app/share/icons/hicolor/256x256/apps/com.invisionapp.Studio.png"
+                "install -D --mode=644 invision_logo.svg /app/share/icons/hicolor/256x256/apps/com.invisionapp.Studio.svg"
             ],
             "no-make-install": true,
             "sources": [
                 {
                 "type": "file",
-                "path": "invision-studio.svg",
-                "sha256": "ADD THIS"
+                "path": "invision_logo.svg",
+                "sha256": "ac04895c97ef9a4d83bf2e6566a5657587accdcf133d378b47771b29398036da"
                 }
             ]
         },
