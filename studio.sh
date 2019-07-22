@@ -87,7 +87,7 @@ startup(){
 
 
   echo "Setting resolution to ${WINE_RESOLUTION}"
-  echo "If resolution was changed from default, game may need restarting"
+  echo "If resolution was changed from default, program may need restarting"
   winetricks --unattended vd="${WINE_RESOLUTION}" >/dev/null
 
   echo ; echo "Starting Invision Studio..."
