@@ -90,8 +90,8 @@ startup(){
   echo "If resolution was changed from default, game may need restarting"
   winetricks --unattended vd="${WINE_RESOLUTION}" >/dev/null
 
-  echo ; echo "Starting Path of Exile..."
-  "${WINE}" "${POE_RUN_CMD}" dbox  -no-dwrite -noasync
+  echo ; echo "Starting Invision Studio..."
+  "${WINE}" "${INVISION_RUN_CMD}"
 }
 
 startup
