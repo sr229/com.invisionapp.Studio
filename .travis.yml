@@ -17,10 +17,10 @@ before_install:
 install:
   - flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   - flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-  - |
-    flatpak-builder  --verbose \
-      --install-deps-only --install-deps-from=flathub-beta --user \
-      --arch=$ARCH /dev/null \
-      io.winebar.Sdk.yml
+  - flatpak install flathub-beta io.winebar.Platform//19.08beta io.winebar.Sdk//19.08beta
 
-script: flatpak-builder build-dir com.invisionapp.Studio.yml
+script: |
+    flatpak-builder build-dir  --verbose \
+      --install-deps-from=flathub-beta --user \
+      --arch=$ARCH /dev/null \
+      com.invisionapp.Studio.yml
