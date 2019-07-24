@@ -38,6 +38,7 @@
                 "--libdir=/app/lib",
                 "--disable-win16",
                 "--with-x",
+                "--enable-wine64",
                 "--without-cups",
                 "--without-curses",
                 "--without-capi",
