@@ -17,7 +17,17 @@ before_install:
 install:
   - flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   - flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-  - flatpak install flathub-beta io.winebar.Platform//19.08beta io.winebar.Sdk//19.08beta
+  - git clone https://github.com/gasinvein/winebar-sdk/
+  - cd winebar-sdk
+  - |
+    flatpak-builder  --verbose \
+      --install-deps-only --install-deps-from=flathub-beta --user \
+      --arch=$ARCH /dev/null \
+      io.winebar.Sdk.yml
+  - ./build.sh $ARCH ./repo "--verbose" ""
+  - flatpak --user remote-add --no-gpg-verify travis ./repo
+  - cd ..
+  - flatpak install travis io.winebar.Platform//master io.winebar.Sdk//master
 
 script: |
     flatpak-builder build-dir  --verbose \

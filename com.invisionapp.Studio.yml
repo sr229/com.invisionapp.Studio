@@ -1,8 +1,7 @@
 app-id: com.invisionapp.Studio
-branch: master
+branch: develop
 runtime: io.winebar.Platform
 sdk: io.winebar.Sdk
-runtime-version: 19.08beta
 
 tags:
 - proprietary
@@ -13,23 +12,19 @@ add-extensions:
   io.winebar.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
     add-ld-path: "."
-    version: 19.08beta
     no-autodownload: false
     autodelete: false
 
   io.winebar.Platform.Compat.i386.Debug:
     directory: lib/debug/lib/i386-linux-gnu
-    version: 19.08beta
     no-autodownload: true
 
   io.winebar.Platform.Mono:
     directory: share/wine/mono
-    version: 19.08beta
     autodelete: false
 
   io.winebar.Platform.Gecko:
     directory: share/wine/gecko
-    version: 19.08beta
     autodelete: false
 
 platform-extensions:
