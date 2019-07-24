@@ -1,8 +1,8 @@
 {
     "app-id": "com.invisionapp.Studio",
     "branch": "master",
-    "runtime": "org.freedesktop.Platform/x86_64",
-    "sdk": "org.freedesktop.Sdk/x86_64",
+    "runtime": "org.freedesktop.Platform",
+    "sdk": "org.freedesktop.Sdk",
     "runtime-version": "18.08",
     "tags": ["proprietary"],
     "command": "studio.sh",
@@ -26,8 +26,7 @@
        "--filesystem=xdg-documents",
        "--filesystem=/usr/share/fonts:ro",
        "--env=WINEDEBUG=-all",
-       "--env=WINE_RESOLUTION=1920x1080",
-       "--env=VIDEO_MEMORY="
+       "--env=WINE_RESOLUTION=1920x1080"
     ],
     "modules": [
         {
@@ -195,13 +194,13 @@
             "name": "desktop",
             "buildsystem": "simple",
             "build-commands": [
-                "install -D --mode=644 invision-studio.desktop /app/share/applications/com.invisionapp.Studio.desktop"
+                "install -D --mode=644 studio.desktop /app/share/applications/com.invisionapp.Studio.desktop"
             ],
             "no-make-install": true,
             "sources": [
                 {
                 "type": "file",
-                "path": "invsion-studio.desktop"
+                "path": "studio.desktop"
                 }
             ]
         },

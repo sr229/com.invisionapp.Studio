@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Invision Studio
+Type=Application
+Exec=studio.sh
+Comment=Invision Studio is a new platform inspired by the world’s best design teams. Design, prototype, and animate—all in one place.
+Icon=com.invisionapp.Studio
