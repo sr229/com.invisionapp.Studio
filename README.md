@@ -25,7 +25,7 @@ flatpak install flathub org.freedesktop.Platform//19.08 org.freedesktop.Sdk//19.
 Then build the flatpak as is by walking to the project's directory.
 
 ```bash
-$ flatpak-builder build-dir com.invisionapp.Studio.json
+$ flatpak-builder build-dir com.invisionapp.Studio.yml
 ```
 ## Copyright
 
