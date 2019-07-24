@@ -7,7 +7,7 @@ INVISON_SETUP="${WINEPREFIX}/${INVISION_INSTALLER_NAME}"
 INVISION_DL_URL="https://projects.invisionapp.com/studio/releases/download/windows/"
 INVISION_RUN_CMD="${WINEPREFIX}/drive_c/users/${USER}/AppData/Local/Invision Studio/studio.exe"
 
-WINE="/app/bin/wine"
+WINE="/app/bin/wine64"
 
 XORG_LOG="/var/log/Xorg.0.log"
 

@@ -37,6 +37,7 @@
             "config-opts": [
                 "--libdir=/app/lib",
                 "--disable-win16",
+                "--enable-win64",
                 "--with-x",
                 "--without-cups",
                 "--without-curses",
