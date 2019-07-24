@@ -15,7 +15,7 @@ XORG_LOG="/var/log/Xorg.0.log"
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
-declare -ra WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma win7 dotnet46)
+declare -ra WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma win7 dotnet46 vcrun2015)
 declare -ra WINE_SETTINGS=('csmt=on' 'glsl=disabled')
 
 echo "########################################################"
