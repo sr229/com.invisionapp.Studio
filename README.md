@@ -10,7 +10,7 @@ Invision Studio is a new platform inspired by the world’s best design teams. D
 
 For now there is no direct way to install the flatpak. Currently you have to build it.
 
-simply get the freedesktop SDK (18.08) and `flatpak-builder`
+simply get the Winebar SDK and `flatpak-builder`
 
 ```bash
 # For DNF-based systems
