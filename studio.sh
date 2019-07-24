@@ -14,7 +14,7 @@ XORG_LOG="/var/log/Xorg.0.log"
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
-WINE_PACKAGES="directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 win10"
+WINE_PACKAGES="directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 winxp"
 
 echo "########################################################"
 echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##"
@@ -29,6 +29,9 @@ set_wine_settings() {
 
   echo "Installing wine requirements."
   winetricks --unattended "${WINE_PACKAGES}"
+
+  # Switch back to Windows 10 - Invision only supports Windows 10
+  winetricks --unattended win10
 
   # Symlink points to wrong location, fix it
   if [[ "$(readlink "${my_documents}")" != "${XDG_DOCUMENTS_DIR}" ]]; then
