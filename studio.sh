@@ -54,7 +54,7 @@ first_run() {
     wget --output-document=${INVISION_SETUP} ${INVISION_DL_URL}
   fi
   echo "Running Invision Studio installer."
-  "${WINE}" "${INVISION_SETUP}"
+  "${WINE}" runas /trustlevel:0x20000 "${INVISION_SETUP}"
 }
 
 is_updated() {
