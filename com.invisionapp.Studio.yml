@@ -121,8 +121,8 @@ modules:
   - "--without-hal"
   - "--without-ldap"
   - "--without-netapi"
-  # Disabling WoW64 build until we figure out the directories for it.
-#  - "-with-wine64=../wine64-build"
+  # Experimental- Recommend disabling WoW64 build until we figure out the directories for it.
+  - "--with-wine64=/app"
 
   cleanup:
   - "/bin/function_grep.pl"
