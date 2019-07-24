@@ -14,7 +14,7 @@ XORG_LOG="/var/log/Xorg.0.log"
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
-WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma dotnet46 vcrun2015 win10)
+WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 win10)
 
 echo "########################################################"
 echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##"
@@ -23,6 +23,9 @@ echo
 
 set_wine_settings(){
   local my_documents="${WINEPREFIX}/drive_c/users/${USER}/My Documents"
+
+  echo "WORKAROUND: set registry for dotnet452"
+  wine reg add "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Component Based Servicing\\Version" /v 6.1.7601.17592 /t REG_SZ /d "foo" /f
 
   echo "Installing wine requirements."
   winetricks --unattended "${WINE_PACKAGES[@]}"

@@ -78,13 +78,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://dl.winehq.org/wine/source/3.x/wine-3.8.tar.xz",
-                    "sha256": "02b00c6c948b3bab717e1b1e2075a5406b14d138bd2e01fdb1268a93d1c20d51"
+                    "url": "https://dl.winehq.org/wine/source/4.x/wine-4.0.tar.xz",
+                    "sha256": "b2eec9388e4fdb0d84e36219c552897183cd56e39daccd7329ab69724b7abb2e"
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/wine-staging/wine-staging/archive/v3.8.tar.gz",
-                    "sha256": "fd40c24e00b3da4498f78885a5d3c4a9699790c1de78f6e43ff151432824f2ad"
+                    "url": "https://github.com/wine-staging/wine-staging/archive/v4.0.tar.gz",
+                    "sha256": "12f7d1e46f06ed56b4b409b7f40e47622d84262e7e78cfc02f19c0cdd8b03788"
                 },
                 {
                     "type": "shell",
@@ -103,8 +103,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Winetricks/winetricks/archive/20180513.tar.gz",
-                    "sha256": "626aff64e3d93698704b0b668225d5504fd8ef556e3834f569058deaeafada8e"
+                    "url": "https://github.com/Winetricks/winetricks/archive/20190615.tar.gz",
+                    "sha256": "2a5ebbd95e0ed0041f903148af19ba28d5b7e29a62db4501771dfffb7368fc42"
                 }
             ]
         },
