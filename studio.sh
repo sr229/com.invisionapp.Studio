@@ -7,7 +7,6 @@ INVISON_SETUP="${WINEPREFIX}/${INVISION_INSTALLER_NAME}"
 INVISION_DL_URL="https://projects.invisionapp.com/studio/releases/download/windows/"
 INVISION_RUN_CMD="${WINEPREFIX}/drive_c/users/${USER}/AppData/Local/Invision Studio/studio.exe"
 
-WINE_RESOLUTION="${WINE_RESOLUTION:-1920x1080}"
 WINE="/app/bin/wine"
 
 XORG_LOG="/var/log/Xorg.0.log"
@@ -15,8 +14,7 @@ XORG_LOG="/var/log/Xorg.0.log"
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
-declare -ra WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma win7 dotnet46 vcrun2015)
-declare -ra WINE_SETTINGS=('csmt=on' 'glsl=disabled')
+WINE_PACKAGES=(directx9 usp10 msls31 corefonts tahoma dotnet46 vcrun2015 win10)
 
 echo "########################################################"
 echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##"
@@ -28,9 +26,6 @@ set_wine_settings(){
 
   echo "Installing wine requirements."
   winetricks --unattended "${WINE_PACKAGES[@]}"
-
-  echo "Setting wine settings."
-  winetricks --unattended "${WINE_SETTINGS[@]}"
 
   # Symlink points to wrong location, fix it
   if [[ "$(readlink "${my_documents}")" != "${XDG_DOCUMENTS_DIR}" ]]; then
@@ -50,7 +45,7 @@ first_run(){
 
   if [ ! -f "${INVISON_SETUP}" ]; then
     echo "Downloading Invision Studio installer."
-    wget -O "${INVISION_SETUP}" "${INVISION_DL_URL}"
+    wget -O ${INVISION_SETUP} ${INVISION_DL_URL}
   fi
   echo "Running Invision Studio installer."
   "${WINE}" "${INVISION_SETUP}"
