@@ -19,7 +19,7 @@ sudo dnf install flatpak flatpak-builder
 sudo apt install flatpak flatpak-builder 
 
 # Get the Freedesktop 18.08 SDK runtime
-flatpak install flathub org.freedesktop.Platform//18.08 org.freedesktop.Sdk//18.08
+flatpak install flathub org.freedesktop.Platform//19.08 org.freedesktop.Sdk//19.08
 ```
 
 Then build the flatpak as is by walking to the project's directory.

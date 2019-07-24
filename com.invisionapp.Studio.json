@@ -3,9 +3,23 @@
     "branch": "master",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "18.08",
+    "runtime-version": "19.08",
     "tags": ["proprietary"],
     "command": "studio.sh",
+    "add-extensions": {
+        "org.freedesktop.Platform.Compat.i386": {
+            "directory": "lib/i386-linux-gnu",
+            "version": "19.08"
+        },
+        "org.freedesktop.Platform.Compat.i386.Debug": {
+            "directory": "lib/debug/lib/i386-linux-gnu",
+            "version": "19.08",
+            "no-autodownload": true
+        }
+    },
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.toolchain-i386"
+    ],
     "build-options": {
       "cflags": "-O1 -pipe",
       "env": {
@@ -36,7 +50,6 @@
             "config-opts": [
                 "--libdir=/app/lib",
                 "--disable-win16",
-                "--enable-win64",
                 "--with-x",
                 "--without-cups",
                 "--without-curses",
