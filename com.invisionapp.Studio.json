@@ -129,7 +129,7 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "http://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi",
+                    "url": "https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi",
                     "sha256": "3b8a361f5d63952d21caafd74e849a774994822fb96c5922b01d554f1677643a"
                 }
             ]
@@ -138,14 +138,14 @@
             "name": "wine-mono",
             "buildsystem": "simple",
             "build-commands": [
-              "install -D wine-mono-4.7.1.msi /app/share/wine/mono/wine-mono-4.7.1.msi"
+              "install -D wine-mono-4.9.0.msi /app/share/wine/mono/wine-mono-4.9.0.msi"
             ],
             "no-make-install": true,
             "sources": [
                 {
                     "type": "file",
-                    "url": "http://dl.winehq.org/wine/wine-mono/4.7.1/wine-mono-4.7.1.msi",
-                    "sha256": "2c8d5db7f833c3413b2519991f5af1f433d59a927564ec6f38a3f1f8b2c629aa"
+                    "url": "http://dl.winehq.org/wine/wine-mono/4.9.0/wine-mono-4.9.0.msi",
+                    "sha256": "8e2ec7ce6f10faa24e7b1b4bcab99a946dfe975c21327c8420c7abc74ee1c713"
                 }
             ]
         },
