@@ -6,6 +6,7 @@ runtime-version: '19.08'
 
 tags:
 - proprietary
+
 command: studio.sh
 
 add-extensions:
@@ -41,6 +42,7 @@ finish-args:
 
 modules:
 
+  # TODO: find a way to build WoW64 in-Flatpak
 - name: wine
 
   build-options:
@@ -193,7 +195,7 @@ modules:
   build-commands:
   - install -D --mode=644 com.invisionapp.Studio.appdata.xml /app/share/metainfo/com.invisonapp.Studio.appdata.xml
   no-make-install: true
-  
+
   sources:
   - type: file
     path: com.invisionapp.Studio.appdata.xml
