@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export WINEPREFIX="${HOME}/.local/share/invison_studio"
 
@@ -7,17 +7,13 @@ INVISON_SETUP="${WINEPREFIX}/${INVISION_INSTALLER_NAME}"
 INVISION_DL_URL="https://projects.invisionapp.com/studio/releases/download/windows/"
 INVISION_RUN_CMD="${WINEPREFIX}/drive_c/users/${USER}/AppData/Local/Invision Studio/studio.exe"
 
-WINE="/app/bin/wine64"
-
-XORG_LOG="/var/log/Xorg.0.log"
-
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
 WINE_PACKAGES="directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 winxp"
 
 echo "########################################################"
-echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##"
+echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##############"
 echo "########################################################"
 echo
 
@@ -54,7 +50,7 @@ first_run() {
     wget --output-document=${INVISION_SETUP} ${INVISION_DL_URL}
   fi
   echo "Running Invision Studio installer."
-  "${WINE}" runas /trustlevel:0x20000 "${INVISION_SETUP}"
+  wine runas /trustlevel:0x20000 "${INVISION_SETUP}"
 }
 
 is_updated() {
@@ -87,7 +83,7 @@ startup() {
  fi
 
   echo ; echo "Starting Invision Studio..."
-  "${WINE}" "${INVISION_RUN_CMD}"
+  wine "${INVISION_RUN_CMD}"
 }
 
 startup
