@@ -25,8 +25,7 @@
        "--filesystem=/var/log:ro",
        "--filesystem=xdg-documents",
        "--filesystem=/usr/share/fonts:ro",
-       "--env=WINEDEBUG=-all",
-       "--env=WINE_RESOLUTION=1920x1080"
+       "--env=WINEDEBUG=-all"
     ],
     "modules": [
         {
