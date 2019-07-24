@@ -18,8 +18,24 @@ sudo dnf install flatpak flatpak-builder
 # For APT-based systems
 sudo apt install flatpak flatpak-builder 
 
-# Get the Freedesktop 18.08 SDK runtime
-flatpak install flathub io.winebar.Platform//19.08beta io.winebar.Sdk//19.08beta
+# Grab the FlatHub and FlatHub Beta Remotes
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+
+# Build winebar-sdk
+export ARCH=x86_64
+
+git clone git clone https://github.com/gasinvein/winebar-sdk/ && cd winebar-sdk && \
+flatpak-builder --verbose --install-deps-only --install-deps-from=flathub-beta --arch=$ARCH /dev/null io.winebar.Sdk.yml && \
+./build.sh $ARCH ./repo "--verbose" ""
+
+# Add the winebar self-built repo; install the runtimes
+flatpak --user remote-add --no-gpg-verify winebar-local ./repo
+
+flatpak install travis io.winebar.Platform//master io.winebar.Sdk//master
+
+# Walk back to the root project and build Flatpak
+cd ..
 ```
 
 Then build the flatpak as is by walking to the project's directory.
