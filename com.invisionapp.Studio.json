@@ -1,9 +1,9 @@
 {
     "app-id": "com.invisionapp.Studio",
     "branch": "master",
-    "runtime": "org.freedesktop.Platform/amd64",
-    "sdk": "org.freedesktop.Sdk/amd64",
-    "runtime-version": "1.6",
+    "runtime": "org.freedesktop.Platform/x86_64",
+    "sdk": "org.freedesktop.Sdk/x86_64",
+    "runtime-version": "18.08",
     "tags": ["proprietary"],
     "command": "studio.sh",
     "build-options": {
@@ -186,7 +186,7 @@
             "sources": [
                 {
                 "type": "file",
-                "path": "invision_logo.svg",
+                "path": "icons/invision_logo.svg",
                 "sha256": "ac04895c97ef9a4d83bf2e6566a5657587accdcf133d378b47771b29398036da"
                 }
             ]
