@@ -10,8 +10,6 @@ INVISION_RUN_CMD="${WINEPREFIX}/drive_c/users/${USER}/AppData/Local/Invision Stu
 VERSION_NUM="1.20.0"
 VERSION_FILE="${WINEPREFIX}/com.invisionapp.Studio.version"
 
-WINE_PACKAGES="directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 winxp"
-
 echo "########################################################"
 echo "## Invision Studio Unofficial Flatpak v${VERSION_NUM} ##############"
 echo "########################################################"
@@ -24,10 +22,10 @@ set_wine_settings() {
   wine reg add "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Component Based Servicing\\Version" /v 6.1.7601.17592 /t REG_SZ /d "foo" /f
 
   echo "Installing wine requirements."
-  winetricks --unattended "${WINE_PACKAGES}"
+  winetricks --force -q  directx9 usp10 msls31 corefonts tahoma dotnet452 vcrun2015 winxp
 
   # Switch back to Windows 10 - Invision only supports Windows 10
-  winetricks --unattended win10
+  winetricks -q win10
 
   # Symlink points to wrong location, fix it
   if [[ "$(readlink "${my_documents}")" != "${XDG_DOCUMENTS_DIR}" ]]; then
@@ -47,7 +45,7 @@ first_run() {
 
   if [ ! -f "${INVISON_SETUP}" ]; then
     echo "Downloading Invision Studio installer."
-    wget --output-document=${INVISION_SETUP} ${INVISION_DL_URL}
+    wget -O "${INVISION_SETUP}" "${INVISION_DL_URL}"
   fi
   echo "Running Invision Studio installer."
   wine runas /trustlevel:0x20000 "${INVISION_SETUP}"

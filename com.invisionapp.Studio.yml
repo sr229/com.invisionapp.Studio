@@ -80,6 +80,31 @@ modules:
   - type: file
     path: studio.sh
 
+- name: busybox
+  buildsystem: simple
+
+  build-commands:
+  - install -D --mode=755 busybox /app/bin/busybox
+  - /app/bin/busybox --install /app/bin
+  no-make-install: true
+
+  sources:
+  - type: archive
+    url: https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-x86_64
+    sha256: 51fcb60efbdf3e579550e9ab893730df56b33d0cc928a2a6467bd846cdfef7d8
+  
+- name: busybox-sslhelper
+  buildsystem: simple
+
+  build-commands:
+  - install -D --mode=755 ssl_helper /app/bin/ssl_helper
+  no-make-install: true
+
+  sources:
+  - type: archive
+    url: https://busybox.net/downloads/binaries/ssl_helper-x86_64
+    sha256: 4c68c3b6aea617391a97904ee3fab9fa75bbbcc7c4ab590113733e8bc83f0ee5
+
 - name: icons
   buildsystem: simple
 
