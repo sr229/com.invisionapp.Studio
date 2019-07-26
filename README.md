@@ -25,7 +25,7 @@ flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-
 # Build winebar-sdk
 export ARCH=x86_64
 
-git clone git clone https://github.com/gasinvein/winebar-sdk/ && cd winebar-sdk && \
+git clone https://github.com/gasinvein/winebar-sdk/ && cd winebar-sdk && \
 flatpak-builder --verbose --install-deps-only --install-deps-from=flathub-beta --arch=$ARCH /dev/null io.winebar.Sdk.yml && \
 ./build.sh $ARCH ./repo "--verbose" ""
 
