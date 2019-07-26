@@ -32,7 +32,7 @@ flatpak-builder --verbose --install-deps-only --install-deps-from=flathub-beta -
 # Add the winebar self-built repo; install the runtimes
 flatpak --user remote-add --no-gpg-verify winebar-local ./repo
 
-flatpak install travis io.winebar.Platform//master io.winebar.Sdk//master
+flatpak install winebar-local io.winebar.Platform//master io.winebar.Sdk//master
 
 # Walk back to the root project and build Flatpak
 cd ..
